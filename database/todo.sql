@@ -12,6 +12,6 @@ CREATE TABLE Todos (
 	ID INTEGER PRIMARY KEY, 
 	content TEXT,
 	user INTEGER,
-	passwordHash TEXT, 
+	creationTime TEXT, 
 	FOREIGN KEY (user) REFERENCES Users(ID)
 );
