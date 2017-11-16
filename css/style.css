@@ -2,7 +2,7 @@ body {
   max-width: 700px;
   margin: auto;
   width:90%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(233, 233, 233);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -13,7 +13,8 @@ body > header {
   background-color: #28c9ae;
   padding: 1em;
   margin-top: 1em;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 body > header > a > h1 {
@@ -97,29 +98,37 @@ body > header > a {
 }
 
 #lists li:nth-child(1) {
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: #0084c8;
 }
 
 #lists li:nth-child(2) {
-  border-radius: 10px;
   background-color: #ffc022;
 }
 
 #lists li:nth-child(3) {
-  border-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: #dc0000;
 }
 
+#lists li div {
+  padding:1em;
+}
+
 #lists li a {
-  padding: 1em;
   display: block;
   color: white;
   text-decoration: none;
 }
 
-#lists li a:hover {
+#lists li div:hover {
   text-shadow:0px 0px 5px white;
+}
+
+@media only screen and (max-width: 500px) {
+   #lists li div a:nth-child(2) {
+        display:none;
+   }
 }
 
 #todoList > ul {
@@ -141,10 +150,12 @@ body > header > a {
 #todoList > ul > li > article > p {
   margin: 0em;
   padding: auto;
+  color: white;  
+  flex-grow: 1;
 }
 
 #todoList > ul > li > article > a {
-  color: black;
+  color: white;
 }
 
 body > footer{
