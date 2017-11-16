@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		  <title>Todo List</title>
-		  <link rel="stylesheet" href="/css/style.css"/>
-		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-	</head>
+<head>
+	<title>Todo List</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
 <body>
 	<header>
 		<h1>Todo List</h1>
-		<ul>
-  			<li><a href=".">Login</a></li>
-  			<li><a href=".">Register</a></li>
-  			<li><a href=".">Logout</a></li>
-		</ul>
+	      <div id="user">
+	        <form action="action_login.php" method="post">
+	          <input type="text" placeholder="username" name="username">
+	          <input type="password" placeholder="password" name="password">
+	          <div>
+	            <input type="submit" value="Login">
+	            <a href="register.php">Register</a>
+							<a href="logout.php">Logout</a>
+	          </div>
+	        </form>
+	      </div>
+		<div id="lists">
+			<ul>
+				<li> <a href=".">Create new To-do list</a></li>
+				<li> <a href="."> My To-do lists </a> </li>
+				<li> <a href=".">Delete To-do list</a> </li>
+			</ul>
+		</div>
 	</header>
 	<section id="todoList">
 		<ul>
-  			<li> 
+			<li>
 				<article>
 					<p>Note 1</p>
-					<a href="."><i class="material-icons">mode_edit</i></a> 
-				</article> 
+					<a href="."><i class="material-icons">mode_edit</i></a>
+				</article>
 			</li>
-			<li> 
+			<li>
 				<article>
 					<p>Note 2</p>
-					<a href="."><i class="material-icons">mode_edit</i></a> 
-				</article> 
+					<a href="."><i class="material-icons">mode_edit</i></a>
+				</article>
 			</li>
 		</ul>
 	</section>
