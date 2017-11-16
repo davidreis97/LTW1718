@@ -2,29 +2,64 @@ body {
   max-width: 700px;
   margin: auto;
   width:90%;
-  background-color: rgb(41, 41, 116);
+  background-color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
 }
 
 body > header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   background-color: #28c9ae;
   padding: 1em;
   margin-top: 1em;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
-body > header > h1 {
-  padding: 0.2em;
+body > header > a > h1 {
+  text-decoration: none;
+  color:black;
+  padding: 0.7em;
   margin: 0em;
 }
+
+body > header > a {
+  text-decoration: none;
+}
+
+#registerForm {
+  border-radius: 10px;
+  background-color: #8029c7;  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+#registerForm > form {
+  margin: auto;
+  max-width: 300px;
+}
+
+#registerForm >form > label {
+  color: white;
+}
+
+#registerForm > form > input {
+  width: 100%;
+  margin-bottom: 1em;
+} 
+
 #user  {
   padding: 1em 0 1em 1em;
 }
 
 #user form {
+  width: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
 }
 
 #user input {
@@ -39,9 +74,14 @@ body > header > h1 {
 
 #user a {
   text-decoration: none;
+  padding-left: 0.5em;
   color: #0084c8;
   flex-grow: 1;
   text-align: center;
+}
+
+#lists {
+  width: 100%;
 }
 
 #lists ul {
@@ -57,14 +97,17 @@ body > header > h1 {
 }
 
 #lists li:nth-child(1) {
+  border-radius: 10px;
   background-color: #0084c8;
 }
 
 #lists li:nth-child(2) {
+  border-radius: 10px;
   background-color: #ffc022;
 }
 
 #lists li:nth-child(3) {
+  border-radius: 10px;
   background-color: #dc0000;
 }
 
@@ -89,7 +132,7 @@ body > header > h1 {
   margin-top: 1em;
   padding: 1em;
   display: flex;
-  border-radius: 3px;
+  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   background-color: green;
@@ -106,7 +149,7 @@ body > header > h1 {
 
 body > footer{
   background-color: pink;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 body > footer > p {
