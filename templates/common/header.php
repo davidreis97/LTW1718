@@ -11,14 +11,11 @@
 	<header>
 		<a href="index.php"><h1>TodoList</h1></a>
 		<div id="user">
-			<form action="action_login.php" method="post">
-				<input type="text" placeholder="username" name="username">
-				<input type="password" placeholder="password" name="password">
-				<div>
-					<input type="submit" value="Login">
-					<a href="register.php">Register</a>
-					<a href="logout.php">Logout</a>
-				</div>
-			</form>
-		</div>
+      <?php
+        if (isset($_SESSION['username']))
+          include ('templates/common/logout_form.php');
+        else
+          include ('templates/common/login_form.php');
+      ?>
+    </div>
 	</header>
