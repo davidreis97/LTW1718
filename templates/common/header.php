@@ -4,6 +4,7 @@
 	<title>Todo List</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 </head>
 <body>
 	<header>
