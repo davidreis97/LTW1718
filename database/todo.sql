@@ -11,14 +11,15 @@ CREATE TABLE Users (
 CREATE TABLE TodoItems (
 	ID INTEGER PRIMARY KEY, 
 	content TEXT,
-	user INTEGER,
 	creationTime TEXT,
-	FOREIGN KEY (user) REFERENCES Users(ID),
+	todoList INTEGER,
 	FOREIGN KEY (todoList) REFERENCES TodoLists(ID)
 );
 
 CREATE TABLE TodoLists (
 	ID INTEGER PRIMARY KEY,
 	title TEXT,
-	public TEXT
+	user INTEGER,
+	public TEXT,
+	FOREIGN KEY (user) REFERENCES Users(ID)
 );

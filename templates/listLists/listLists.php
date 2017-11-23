@@ -3,8 +3,7 @@
       <?php foreach ($listitems as $listitem) { ?>
         <li>
           <article>
-            <p><?=listitem['content']?></p>
-            <a href="."><i class="material-icons">mode_edit</i></a>
+            <a href="."><?=$listitem['title'] ?></a>
             <a href="."><i class="material-icons">delete</i></a>
           </article>
         </li>
