@@ -10,4 +10,13 @@ function isLoginCorrect($username, $password) {
   return $stmt->fetch() == true;
 }
 
+function createUser($username, $password) {
+  global $db;  
+    
+  $hash = sha1($password);
+
+  $stmt = $db->prepare('INSERT INTO users VALUES (?, ?)');
+  $stmt->execute(array($username, $hash));
+}
+
 ?>
