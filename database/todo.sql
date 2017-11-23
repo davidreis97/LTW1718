@@ -1,15 +1,14 @@
 DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Todos;
+DROP TABLE IF EXISTS TodoItems;
+DROP TABLE IF EXISTS TodoLists;
 
 CREATE TABLE Users (
-	ID INTEGER PRIMARY KEY, 
 	name TEXT,
-	username TEXT UNIQUE,
+	username TEXT PRIMARY KEY,
 	passwordHash TEXT
 );
 
 CREATE TABLE TodoItems (
-	ID INTEGER PRIMARY KEY, 
 	content TEXT,
 	creationTime TEXT,
 	todoList INTEGER,
@@ -21,5 +20,5 @@ CREATE TABLE TodoLists (
 	title TEXT,
 	user INTEGER,
 	public TEXT,
-	FOREIGN KEY (user) REFERENCES Users(ID)
+	FOREIGN KEY (user) REFERENCES Users(username)
 );
