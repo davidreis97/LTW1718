@@ -14,7 +14,7 @@ function isLoginCorrect($username, $password) {
 
 function createUser($username, $password, $name) {
   global $db;  
-    
+
   $hash = sha1($password);
 
   $stmt = $db->prepare('INSERT INTO users VALUES (?, ?, ?)');

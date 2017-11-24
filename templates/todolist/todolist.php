@@ -1,6 +1,6 @@
 <section id="todoList">
   <ul>
-      <?php foreach ($listitems as $listitem) { ?>
+      <?php foreach ($listItems as $listItem) { ?>
         <li>
           <article>
             <p><?=listitem['content']?></p>
