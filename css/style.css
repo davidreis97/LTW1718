@@ -28,6 +28,32 @@ body > header > a {
   text-decoration: none;
 }
 
+#todoListTitle {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  display: flex;
+  border-radius: 3px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cornflowerblue;
+}
+
+#todoListTitle > p{
+  margin-left: 36%; /*TODO: ASK TEACHER HOW TO PROPERLY CENTER THIS DAMN THING*/
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right:0;
+  flex-grow: 1;
+  color: white;
+  font-size: 1.1em;
+}
+
+#todoListTitle > a{
+  color:white;
+}
+
+
 #registerForm {
   border-radius: 3px;
   background-color: #8029c7;  
@@ -145,6 +171,17 @@ body > header > a {
   justify-content: space-between;
   align-items: center;
   background-color: green;
+}
+
+#addTodoItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#addTodoItem > input:nth-child(1){
+  margin-right: 1em;
+  flex-grow: 1;
 }
 
 #todoList > ul > li > article > p {

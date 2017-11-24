@@ -3,22 +3,36 @@ DROP TABLE IF EXISTS TodoItems;
 DROP TABLE IF EXISTS TodoLists;
 
 CREATE TABLE Users (
-	name TEXT,
+	name TEXT NOT NULL,
 	username TEXT PRIMARY KEY,
-	passwordHash TEXT
+	passwordHash TEXT NOT NULL
 );
 
 CREATE TABLE TodoItems (
-	content TEXT,
+	ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	content TEXT NOT NULL,
 	creationTime TEXT,
-	todoList INTEGER,
-	FOREIGN KEY (todoList) REFERENCES TodoLists(ID)
+	todoList INTEGER NOT NULL,
+	FOREIGN KEY (todoList) REFERENCES TodoLists(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE TodoLists (
 	ID INTEGER PRIMARY KEY,
-	title TEXT,
-	user INTEGER,
-	public TEXT,
-	FOREIGN KEY (user) REFERENCES Users(username)
+	title TEXT NOT NULL,
+	user INTEGER NOT NULL,
+	public TEXT NOT NULL,
+	FOREIGN KEY (user) REFERENCES Users(username) ON DELETE CASCADE
 );
+
+PRAGMA foreign_keys = ON;
+
+INSERT INTO Users (name, username, passwordHash)
+VALUES ('David','davidreis97','12345');
+
+INSERT INTO TodoLists (ID, title, user, public)
+VALUES ('1','Lista de Teste','davidreis97','1');
+
+INSERT INTO TodoItems (ID,content, creationTime, todoList)
+VALUES (NULL,'Teste, isto é um item','now','1'),
+       (NULL,'Teste1, isto é um item1','now','1'),
+       (NULL,'Teste2, isto é um item2','now','1');

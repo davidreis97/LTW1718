@@ -2,6 +2,7 @@
 $db = new PDO('sqlite:database/todo.db');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db->exec('PRAGMA foreign_keys = ON;');
 
 function isLoginCorrect($username, $password) {
   global $db;
@@ -21,4 +22,27 @@ function createUser($username, $password, $name) {
   $stmt->execute(array($name, $username, $hash));
 }
 
+function addTodoItemToList($content, $todoPage) {
+  global $db;  
+  
+  date_default_timezone_set('Europe/Lisbon');
+  $date = date('h:i d/m/Y', time());
+  
+  $stmt = $db->prepare('INSERT INTO TodoItems VALUES (NULL,?, ?, ?)');
+  $stmt->execute(array($content, $date, $todoPage));
+}
+
+function removeTodoItem($ID) {
+    global $db;
+
+    $stmt = $db->prepare('DELETE FROM TodoItems WHERE ID=?');
+    $stmt->execute(array($ID));
+}
+
+function removeTodoList($ID) {
+  global $db;
+
+  $stmt = $db->prepare('DELETE FROM TodoLists WHERE ID=?');
+  $stmt->execute(array($ID));
+}
 ?>

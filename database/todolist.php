@@ -18,5 +18,6 @@
                           WHERE todoList = ?");
     $stmt->execute(array($todoListId));
 
-    $listItems = $stmt->fetch();
+    $listItems = $stmt->fetchAll();
+
 ?>
