@@ -10,7 +10,9 @@ function isLoginCorrect($username, $password) {
                           FROM Users
                           WHERE username = ? AND passwordHash = ?");
   $stmt->execute(array($username, sha1($password)));
-  return $stmt->fetch() == true;
+  $user=$stmt->fetch();
+  return ($user['name']!== false && sha1($password)==$user['passwordHash']);
+
 }
 
 function createUser($username, $password, $name) {
@@ -27,7 +29,6 @@ function addTodoItemToList($content, $todoPage) {
   
   date_default_timezone_set('Europe/Lisbon');
   $date = date('h:i d/m/Y', time());
-  
   $stmt = $db->prepare('INSERT INTO TodoItems VALUES (NULL,?, ?, ?)');
   $stmt->execute(array($content, $date, $todoPage));
 }

@@ -10,12 +10,4 @@
 <body>
 	<header>
 		<a href="todoPage.php"><h1>TodoList</h1></a>
-		<div id="user">
-      <?php
-        if (isset($_SESSION['username']))
-          include ('templates/common/logout_form.php');
-        else
-          include ('templates/common/login_form.php');
-      ?>
-    </div>
 	</header>

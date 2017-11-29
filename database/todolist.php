@@ -2,7 +2,6 @@
     $todoListId = $_GET['list'];
 
     if (empty($todoListId)) {
-        header('Location: index.php');
         return;
     }
 
