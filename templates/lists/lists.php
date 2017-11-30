@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION['username'])) {?>
 <section id="lists" >
 	<div >
 		<ul>
@@ -13,12 +14,7 @@
 					<a href="."> My lists </a> 
 				</div>
 			</li>
-			<li> 
-				<div>
-					<a href="."><i class="material-icons">delete</i></a>
-					<a href=".">Delete list</a> 
-				</div>
-			</li>
 		</ul>
 	</div>
 </section>
+<?php } ?>
