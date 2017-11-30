@@ -173,6 +173,22 @@ body > header > a {
   background-color: green;
 }
 
+#listLists > ul {
+  list-style-type:none;
+  padding: 0em;
+}
+
+#listLists > ul > li > article {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  display: flex;
+  border-radius: 3px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+}
+
 #addTodoItem {
   display: flex;
   width: 100%;
@@ -205,6 +221,18 @@ body > header > a {
 #todoList > ul > li > article > a {
   color: white;
 }
+
+#listLists > ul > li > article > p {
+  margin: 0em;
+  padding: auto;
+  color: white;  
+  flex-grow: 1;
+}
+
+#listLists > ul > li > article > a {
+  color: white;
+}
+
 
 body > footer{
   background-color: pink;
