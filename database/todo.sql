@@ -11,8 +11,9 @@ CREATE TABLE Users (
 CREATE TABLE TodoItems (
 	ID INTEGER PRIMARY KEY AUTOINCREMENT,
 	content TEXT NOT NULL,
-	creationTime TEXT,
+	creationTime TEXT NOT NULL,
 	todoList INTEGER NOT NULL,
+	status TEXT NOT NULL,
 	FOREIGN KEY (todoList) REFERENCES TodoLists(ID) ON DELETE CASCADE
 );
 
@@ -32,7 +33,7 @@ VALUES ('David','davidreis97','12345');
 INSERT INTO TodoLists (ID, title, user, public)
 VALUES ('1','Lista de Teste','davidreis97','1');
 
-INSERT INTO TodoItems (ID,content, creationTime, todoList)
-VALUES (NULL,'Teste, isto é um item','now','1'),
-       (NULL,'Teste1, isto é um item1','now','1'),
-       (NULL,'Teste2, isto é um item2','now','1');
+INSERT INTO TodoItems (ID,content, creationTime, todoList, status)
+VALUES (NULL,'Teste, isto é um item','now','1', 'notdone'),
+       (NULL,'Teste1, isto é um item1','now','1', 'ongoing'),
+       (NULL,'Teste2, isto é um item2','now','1', 'done');

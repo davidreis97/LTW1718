@@ -1,6 +1,4 @@
 <?php
-    $todoListId = $_GET['list'];
-
     if (empty($todoListId)) {
         echo 'NO TODOLIST ID';
         #header('Location: index.php');
