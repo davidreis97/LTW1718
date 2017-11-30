@@ -19,9 +19,10 @@ function createUser($username, $password, $name) {
   global $db;  
 
   $hash = sha1($password);
+  $sessId = bin2hex(openssl_random_pseudo_bytes(16));
 
-  $stmt = $db->prepare('INSERT INTO users VALUES (?, ?, ?)');
-  $stmt->execute(array($name, $username, $hash));
+  $stmt = $db->prepare('INSERT INTO users VALUES (?, ?, ?, ?)');
+  $stmt->execute(array($name, $username, $hash, $sessId));
 }
 
 function addTodoItemToList($content, $todoPage) {
@@ -29,8 +30,16 @@ function addTodoItemToList($content, $todoPage) {
   
   date_default_timezone_set('Europe/Lisbon');
   $date = date('h:i d/m/Y', time());
-  $stmt = $db->prepare('INSERT INTO TodoItems VALUES (NULL,?, ?, ?)');
+  $stmt = $db->prepare('INSERT INTO TodoItems VALUES (NULL,?, ?, ?, "notdone")');
   $stmt->execute(array($content, $date, $todoPage));
+}
+
+
+function addTodoList($username, $title) {
+  global $db;  
+  
+  $stmt = $db->prepare('INSERT INTO TodoLists VALUES (NULL, ?, ?, "1")');
+  $stmt->execute(array($title, $username));
 }
 
 function removeTodoItem($ID) {

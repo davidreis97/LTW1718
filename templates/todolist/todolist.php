@@ -1,7 +1,6 @@
 <section id="todoList">
   <article id="todoListTitle">  
     <p><?=$todoListTitle['title']?></p>
-    <a href="."><i class="material-icons">mode_edit</i></a>
     <a href="action_removeTodoList.php?id=<?=$todoListId?>"><i class="material-icons">delete</i></a>
   </article>
   <ul>

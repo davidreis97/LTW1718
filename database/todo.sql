@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS TodoLists;
 CREATE TABLE Users (
 	name TEXT NOT NULL,
 	username TEXT PRIMARY KEY,
-	passwordHash TEXT NOT NULL
+	passwordHash TEXT NOT NULL,
+	sessionId TEXT UNIQUE
 );
 
 CREATE TABLE TodoItems (
@@ -18,7 +19,7 @@ CREATE TABLE TodoItems (
 );
 
 CREATE TABLE TodoLists (
-	ID INTEGER PRIMARY KEY,
+	ID INTEGER PRIMARY KEY AUTOINCREMENT,
 	title TEXT NOT NULL,
 	user INTEGER NOT NULL,
 	public TEXT NOT NULL,
@@ -27,11 +28,11 @@ CREATE TABLE TodoLists (
 
 PRAGMA foreign_keys = ON;
 
-INSERT INTO Users (name, username, passwordHash)
-VALUES ('David','davidreis97','12345');
+INSERT INTO Users (name, username, passwordHash, sessionId)
+VALUES ('David','davidreis97','12345','sessId');
 
 INSERT INTO TodoLists (ID, title, user, public)
-VALUES ('1','Lista de Teste','davidreis97','1');
+VALUES (NULL,'Lista de Teste','davidreis97','1');
 
 INSERT INTO TodoItems (ID,content, creationTime, todoList, status)
 VALUES (NULL,'Teste, isto é um item','now','1', 'notdone'),

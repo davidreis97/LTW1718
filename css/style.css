@@ -179,6 +179,17 @@ body > header > a {
   justify-content: space-between;
 }
 
+#addTodoList {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#addTodoList > input:nth-child(1){
+  margin-right: 1em;
+  flex-grow: 1;
+}
+
 #addTodoItem > input:nth-child(1){
   margin-right: 1em;
   flex-grow: 1;
