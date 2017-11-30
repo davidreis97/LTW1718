@@ -3,7 +3,7 @@
       <?php foreach ($listItems as $listItem) { ?>
         <li>
           <article>
-            <a href="/todoPage.php?list=<?=$listItem['ID']?>"><?=$listItem['title'] ?></a> 
+            <a href="/todoPage.php?list=<?=$listItem['ID']?>"><?=$listItem['title'] ?></a>
             <a href="."><i class="material-icons">delete</i></a>
           </article>
         </li>

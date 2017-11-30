@@ -1,5 +1,5 @@
 <section id="todoList">
-  <article id="todoListTitle">  
+  <article id="todoListTitle">
     <p><?=$todoListTitle['title']?></p>
     <a href="action_removeTodoList.php?id=<?=$todoListId?>"><i class="material-icons">delete</i></a>
   </article>
@@ -12,7 +12,7 @@
             <a href="action_removeTodoItem.php?id=<?=$listItem['ID']?>&todoList=<?=$listItem['todoList']?>"><i class="material-icons">delete</i></a>
           </article>
         </li>
-      <?php }?>
+      <?php } ?>
         <li>
           <article>
             <form action="action_addTodoItem.php" method="post" id="addTodoItem">
