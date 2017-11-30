@@ -7,5 +7,5 @@
 
   createUser($username, $password, $name);
   
-  header('Location: index.php');  
+  header('Location: todoPage.php');  
 ?>

@@ -2,6 +2,6 @@
 
   function setCurrentUser($username){
 	  session_start();
-	  $_SESSION['name'] = $username;
+    $_SESSION['username'] = $username;
   }
 ?>
