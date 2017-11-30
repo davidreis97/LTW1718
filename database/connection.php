@@ -55,4 +55,9 @@ function removeTodoList($ID) {
   $stmt = $db->prepare('DELETE FROM TodoLists WHERE ID=?');
   $stmt->execute(array($ID));
 }
+
+function editUser($old_username, $username, $password) {
+  $_SESSION['username'] = $username;
+  //TODOTODOTODOTODOTODOTODOTODOTODOTODO
+}
 ?>

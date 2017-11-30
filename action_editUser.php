@@ -1,9 +1,10 @@
 <?php
   include_once('includes/init.php');
   
+  $old_username = $_SESSION['username'];
   $username = trim(strip_tags($_POST['username']));
   $password = $_POST['password']; 
-  $name = $_POST['name']; 
+  $name = $_POST['name'];  
 
   if(empty($username)) {
     echo 'NO USERNAME';
@@ -23,7 +24,7 @@
     return;
   }
 
-  createUser($username, $password, $name);
+  editUser($old_username, $username, $password, $name);
   
   header('Location: index.php');  
 ?>
