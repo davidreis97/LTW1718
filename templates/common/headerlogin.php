@@ -9,5 +9,5 @@
 </head>
 <body>
 	<header>
-		<a href="todoPage.php"><h1>TodoList</h1></a>
+		<a href="index.php"><h1>TodoList</h1></a>
 	</header>
