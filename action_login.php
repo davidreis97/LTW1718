@@ -6,11 +6,11 @@ $password = $_POST['password'];
 if(empty($username)) {
   echo 'NO USERNAME';
   //header('Location: todoPage.php?list='.$todoList);
-  return; 
+  return;
 }
 
 if(empty($password)) {
-  echo 'NO PASSWORD';    
+  echo 'NO PASSWORD';
   //header('Location: index.php');
   return;
 }
@@ -18,7 +18,7 @@ if(empty($password)) {
 if (isLoginCorrect($_POST['username'], $_POST['password'])) {
   setCurrentUser($_POST['username']);
 }else{
-  echo 'ERROR LOGGING IN';
+   $_SESSION['loginError'] = true;
 }
-header('Location: index.php'); 
+header('Location: index.php');
 ?>

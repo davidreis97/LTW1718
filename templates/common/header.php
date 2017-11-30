@@ -16,12 +16,12 @@
           include ('templates/common/logout_form.php');
         else
           include ('templates/common/login_form.php');
-				if (isset($_SESSION['loginError'])){
-					?><div id="error_login">
-						<p>Error username or password!</p>
-					</div><?php
-					unset($_SESSION['loginError']);
-				}
       ?>
     </div>
+		<?php if (isset($_SESSION['loginError'])){
+			?><div id="error_login">
+				<p>Error username or password!</p>
+			</div><?php
+			unset($_SESSION['loginError']);
+		} ?>
 	</header>
