@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION['username'])) {?>
 <section id="lists" >
 	<div >
 		<ul>
@@ -10,3 +11,4 @@
 		</ul>
 	</div>
 </section>
+<?php } ?>

@@ -5,7 +5,7 @@
 	<title>Todo List</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -16,6 +16,12 @@
           include ('templates/common/logout_form.php');
         else
           include ('templates/common/login_form.php');
+				if (isset($_SESSION['loginError'])){
+					?><div id="error_login">
+						<p>Error username or password!</p>
+					</div><?php
+					unset($_SESSION['loginError']);
+				}
       ?>
     </div>
 	</header>
