@@ -195,6 +195,14 @@ body > header > a {
   justify-content: space-between;
 }
 
+#error_login > p {
+  margin: 0;
+}
+
+#user > a {
+  color: white;
+}
+
 #addTodoList {
   display: flex;
   width: 100%;

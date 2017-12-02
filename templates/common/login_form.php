@@ -5,4 +5,10 @@
   <div>
     <a href="register.php">Register</a>
   </div>
+  <?php if (isset($_SESSION['loginError'])){
+			?><div id="error_login">
+				<p>Error username or password!</p>
+			</div><?php
+			unset($_SESSION['loginError']);
+		} ?>
 </form>

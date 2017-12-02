@@ -5,7 +5,7 @@ $username = $_SESSION['username'];
 $title = $_POST['title'];
 
 if(empty($username)) {
-    echo 'NO CONTENT';
+    echo 'NO USERNAME';
     //header('Location: todoPage.php?list='.$todoList);
     return; 
 }
