@@ -10,5 +10,5 @@ if(empty($ID)) {
 }
 
 removeTodoList($ID);
-header('Location: todoPage.php');
+header('Location: index.php');
 ?>

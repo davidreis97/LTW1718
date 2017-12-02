@@ -4,7 +4,7 @@
         <li>
           <article>
             <a href="/todoPage.php?list=<?=$listItem['ID']?>"><?=$listItem['title'] ?></a>
-            <a href="."><i class="material-icons">delete</i></a>
+            <a href="/action_removeTodoList.php?id=<?=$listItem['ID']?>"><i class="material-icons">delete</i></a>
           </article>
         </li>
       <?php }?>
