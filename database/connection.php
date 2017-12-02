@@ -19,10 +19,9 @@ function createUser($username, $password, $name) {
   global $db;  
 
   $hash = sha1($password);
-  $sessId = bin2hex(openssl_random_pseudo_bytes(16));
 
-  $stmt = $db->prepare('INSERT INTO users VALUES (?, ?, ?, ?)');
-  $stmt->execute(array($name, $username, $hash, $sessId));
+  $stmt = $db->prepare('INSERT INTO users VALUES (?, ?, ?)');
+  $stmt->execute(array($name, $username, $hash));
 }
 
 function addTodoItemToList($content, $todoPage) {
@@ -56,8 +55,17 @@ function removeTodoList($ID) {
   $stmt->execute(array($ID));
 }
 
-function editUser($old_username, $username, $password) {
-  $_SESSION['username'] = $username;
-  //TODOTODOTODOTODOTODOTODOTODOTODOTODO
+function editUser($old_username, $username, $password, $name) {
+  global $db;
+  
+  $hash = sha1($password);
+
+  $stmt = $db->prepare('UPDATE USERS 
+                        SET username=?, passwordHash=?, name=?
+                        WHERE username=?');
+  $stmt->execute(array($username,$hash,$name,$old_username));
+
+
+  $_SESSION['username'] = $username;  
 }
 ?>

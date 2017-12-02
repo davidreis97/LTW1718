@@ -1,5 +1,5 @@
 <section id="registerForm">
-	<form action="action_editProfile.php" method="post">
+	<form action="action_editUser.php" method="post">
 		<label for="name">Name</label>
 		<input type="text" placeholder="name" name="name" id="name" value="<?=$user['name']?>">
 		<label for="username">Username</label>			

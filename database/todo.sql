@@ -5,8 +5,7 @@ DROP TABLE IF EXISTS TodoLists;
 CREATE TABLE Users (
 	name TEXT NOT NULL,
 	username TEXT PRIMARY KEY,
-	passwordHash TEXT NOT NULL,
-	sessionId TEXT UNIQUE
+	passwordHash TEXT NOT NULL
 );
 
 CREATE TABLE TodoItems (
@@ -15,7 +14,7 @@ CREATE TABLE TodoItems (
 	creationTime TEXT NOT NULL,
 	todoList INTEGER NOT NULL,
 	status TEXT NOT NULL,
-	FOREIGN KEY (todoList) REFERENCES TodoLists(ID) ON DELETE CASCADE
+	FOREIGN KEY (todoList) REFERENCES TodoLists(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE TodoLists (
@@ -23,13 +22,13 @@ CREATE TABLE TodoLists (
 	title TEXT NOT NULL,
 	user INTEGER NOT NULL,
 	public TEXT NOT NULL,
-	FOREIGN KEY (user) REFERENCES Users(username) ON DELETE CASCADE
+	FOREIGN KEY (user) REFERENCES Users(username) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 PRAGMA foreign_keys = ON;
 
-INSERT INTO Users (name, username, passwordHash, sessionId)
-VALUES ('David','davidreis97','12345','sessId');
+INSERT INTO Users (name, username, passwordHash)
+VALUES ('David','davidreis97','12345');
 
 INSERT INTO TodoLists (ID, title, user, public)
 VALUES (NULL,'Lista de Teste','davidreis97','1');

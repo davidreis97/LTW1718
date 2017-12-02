@@ -199,6 +199,10 @@ body > header > a {
   margin: 0;
 }
 
+#user > a {
+  color: white;
+}
+
 #addTodoList {
   display: flex;
   width: 100%;
