@@ -1,5 +1,5 @@
 <?php 
-$db = new PDO('sqlite:database/todo.db');
+$db = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/database/todo.db');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->exec('PRAGMA foreign_keys = ON;');
@@ -67,5 +67,28 @@ function editUser($old_username, $username, $password, $name) {
 
 
   $_SESSION['username'] = $username;  
+}
+
+function editItem($content, $todoItem) {
+  global $db;
+
+  $stmt = $db->prepare('UPDATE TodoItems 
+                        SET content=?
+                        WHERE ID=?');
+  $stmt->execute(array($content,$todoItem));
+
+
+  $_SESSION['username'] = $username;  
+}
+
+function getTodoItemByID($todoItem) {
+  global $db;
+
+  $stmt = $db->prepare("SELECT *
+                        FROM TodoItems
+                        WHERE ID=?");
+  $stmt->execute(array($todoItem));
+  
+  return $stmt->fetch();
 }
 ?>

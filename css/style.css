@@ -189,10 +189,19 @@ body > header > a {
   background-color: red;
 }
 
-#addTodoItem {
+.editTodoItemListItem {
+  display: none;
+}
+
+#editTodoItem {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+#editTodoItem > input:nth-child(1){
+  margin-right: 1em;
+  flex-grow: 1;
 }
 
 #error_login > p {
@@ -210,11 +219,6 @@ body > header > a {
 }
 
 #addTodoList > input:nth-child(1){
-  margin-right: 1em;
-  flex-grow: 1;
-}
-
-#addTodoItem > input:nth-child(1){
   margin-right: 1em;
   flex-grow: 1;
 }
