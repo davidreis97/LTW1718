@@ -11,10 +11,9 @@
       <?php } ?>
         <li>
           <article>
-            <form action="action_addTodoItem.php" method="post" id="addTodoItem">
+            <form action="#" method="post" id="addTodoItem">
               <input type="text" placeholder="New Todo Item" name="content" id="content">
-              <input type="hidden" name="todoList" id="todoList" value="<?=$todoListId?>">
-              <input type="submit" value="Add">
+              <input type="button" value="Add" onclick="addItem(<?=$todoListId?>)">
             </form>
           </article>
         </li>

@@ -2,8 +2,8 @@ function markAsDone(id){
     console.log("Marking as done: " + id);
 }
 
-function addItem(id) {
-    console.log("Adding item: " + id);
+function addItem(todoListID) {
+    console.log("Adding item to todo list: " +todoListID);
 }
 
 function deleteItem(id){
