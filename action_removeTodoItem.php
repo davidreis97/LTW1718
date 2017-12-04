@@ -2,13 +2,6 @@
 include_once('includes/init.php');
 
 $ID = $_GET['id'];
-$todoList = $_GET['todoList'];
-
-if(empty($todoList)) {
-    echo 'NO TODOLIST';        
-    //header('Location: index.php');
-    return;
-}
 
 if(empty($ID)) {
     echo 'NO ID';      
@@ -17,5 +10,5 @@ if(empty($ID)) {
 }
 
 removeTodoItem($ID);
-header('Location: todoPage.php?list='.$todoList);
+//header('Location: todoPage.php?list='.$todoList); //No redirect: Done with AJAX
 ?>

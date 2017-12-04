@@ -223,6 +223,17 @@ body > header > a {
   flex-grow: 1;
 }
 
+#addTodoItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#addTodoItem > input:nth-child(1){
+  margin-right: 1em;
+  flex-grow: 1;
+}
+
 #todoList > ul > li > article > p {
   margin: 0em;
   padding: auto;

@@ -1,5 +1,19 @@
 function markAsDone(id){
-    
+    console.log("Marking as done: " + id);
+}
+
+function addItem(id) {
+    console.log("Adding item: " + id);
+}
+
+function deleteItem(id){
+    let item = document.getElementById(`listTodoItem-${id}`);
+    item.style.display = "none";
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", `action_removeTodoItem.php?id=${id}`, true);
+    xhttp.send(); 
 }
 
 function editItem(id) {
@@ -24,7 +38,7 @@ function finishEditing(id) {
     xhttp = new XMLHttpRequest(); 
 
     xhttp.onreadystatechange = function() {
-        document.getElementById(`content-${id}`).innerText = this.responseText;
+        document.getElementById(`listTodoItem-${id}`).innerHTML = this.responseText;
     }
     xhttp.open("GET", `templates/todolist/getTodoItem.php?todoItem=${id}`, true);
     xhttp.send();
