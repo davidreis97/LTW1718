@@ -12,7 +12,6 @@ function isLoginCorrect($username, $password) {
   $stmt->execute(array($username, sha1($password)));
   $user=$stmt->fetch();
   return ($user['name']!== false && sha1($password)==$user['passwordHash']);
-
 }
 
 function createUser($username, $password, $name) {
@@ -71,24 +70,37 @@ function editUser($old_username, $username, $password, $name) {
 
 function editItem($content, $todoItem) {
   global $db;
-
   $stmt = $db->prepare('UPDATE TodoItems 
                         SET content=?
                         WHERE ID=?');
   $stmt->execute(array($content,$todoItem));
-
-
-  $_SESSION['username'] = $username;  
+ 
 }
+
+function editstatusItem($status, $todoItem) {
+  global $db;
+  $stmt = $db->prepare('UPDATE TodoItems 
+                        SET status=?
+                        WHERE ID=?');
+  $stmt->execute(array($status,$todoItem)); 
+}
+
 
 function getTodoItemByID($todoItem) {
   global $db;
-
   $stmt = $db->prepare("SELECT *
                         FROM TodoItems
                         WHERE ID=?");
   $stmt->execute(array($todoItem));
-  
+  return $stmt->fetch();
+}
+
+function getLastTodoItem(){
+  global $db;
+  $stmt = $db->prepare("SELECT *
+                        FROM TodoItems
+                        ORDER BY ID DESC");
+  $stmt->execute(array($todoItem));
   return $stmt->fetch();
 }
 ?>

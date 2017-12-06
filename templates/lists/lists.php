@@ -4,8 +4,8 @@
 		<ul>
 			<li> 
 				<div>
-					<a href="."><i class="material-icons">list</i></a>
-					<a href="."> My lists </a> 
+					<a href="index.php"><i class="material-icons">list</i></a>
+					<a href="index.php"	> My lists </a> 
 				</div>
 			</li>
 		</ul>
