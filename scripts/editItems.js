@@ -5,8 +5,32 @@ function markAsDone(id){
     if(item.classList=='checked'){
         status="done";
     }
-    else {
-        status="undone"
+    else if(item.classList=='ongoing checked'){
+        item.classList.toggle('ongoing');
+        status="done";
+    }
+    else{
+        status="notdone";
+    }
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", `action_doneTodoItem.php?id=${id}`, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(`status=${status}&todoItem=${id}`);
+}
+
+function markAsOngoing(id){
+    let status;
+    let item = document.getElementById(`listTodoItem-${id}`);
+    item.classList.toggle('ongoing');
+    if(item.classList=='checked ongoing'){
+        item.classList.toggle('checked');
+        status="ongoing";
+    }
+    else if(item.classList=='ongoing'){
+        status="ongoing"
+    }
+    else{
+        status="notdone";
     }
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", `action_doneTodoItem.php?id=${id}`, true);
@@ -82,3 +106,4 @@ function finishEditing(id) {
     let list = document.getElementById(`listTodoItem-${id}`);
     list.style.display = "block";
 }
+

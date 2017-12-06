@@ -8,6 +8,9 @@
         <li id="listTodoItem-<?=$listItem['ID']?>" 
         <?php if($listItem['status']=="done"):?>
           class="checked"
+      <?php endif; ?>
+      <?php if($listItem['status']=="ongoing"):?>
+          class="ongoing"
       <?php endif; ?>>
           <?php include('todoItem.php'); ?>
         </li>
