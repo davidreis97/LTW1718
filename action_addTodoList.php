@@ -3,6 +3,8 @@ include_once('includes/init.php');
 
 $username = $_SESSION['username'];
 $title = $_POST['title'];
+$public = $_POST['public'];
+$public_value = "0";
 
 if(empty($username)) {
     echo 'NO USERNAME';
@@ -16,6 +18,12 @@ if(empty($title)) {
     return;
 }
 
-$todoList = addTodoList($username,$title);
+if(isset($public)){
+    $public_value = "1";
+}else{
+    $public_value = "0";
+}
+
+$todoList = addTodoList($username,$title, $public_value);
 header('Location: index.php');
 ?>

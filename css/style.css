@@ -170,7 +170,7 @@ body > header > a {
   border-radius: 3px;
   justify-content: space-between;
   align-items: center;
-  background-color: green;
+  background-color: rgb(168, 2, 2);
   transition: 0.2s;
 }
 
@@ -235,11 +235,27 @@ body > header > a {
   flex-grow: 1;
 }
 
-#todoList > ul > li > article > p {
-  cursor: pointer;  
+#todoList > ul > li > article > p { 
   margin: 0em;
   padding: auto;
   color: white;  
+  flex-grow: 1;
+}
+
+#no_permissions {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 3px;
+  background-color: rgb(168, 2, 2);
+  transition: 0.2s;
+}
+
+#no_permissions > p { 
+  margin: 0em;
+  padding: auto;
+  color: white;  
+  align-self: center;
   flex-grow: 1;
 }
 
@@ -273,7 +289,7 @@ body > footer > p {
 
 /* When clicked on, add a background color and strike out text */
 #todoList >ul > li.checked > article {
-  background-color: red;
+  background-color: darkgreen;
   color: #fff;
   text-decoration: line-through;
 }

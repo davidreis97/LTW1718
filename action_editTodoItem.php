@@ -16,6 +16,9 @@ if(empty($todoItem)) {
     return;
 }
 
-editItem($content, $todoItem);
+if (!editItem($content, $todoItem)){
+    header('Location: no_permissions.php');
+    return;
+}
 //header('Location: todoPage.php?list='.$todoList); //No redirect, meant to be used with ajax
 ?>

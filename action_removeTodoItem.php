@@ -9,6 +9,9 @@ if(empty($ID)) {
     return;
 }
 
-removeTodoItem($ID);
+if (!removeTodoItem($ID)){
+    header('Location: no_permissions.php');
+    return;
+}
 //header('Location: todoPage.php?list='.$todoList); //No redirect: Done with AJAX
 ?>

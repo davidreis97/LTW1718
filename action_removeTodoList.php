@@ -9,6 +9,10 @@ if(empty($ID)) {
     return;
 }
 
-removeTodoList($ID);
+if (!removeTodoList($ID)){
+    header('Location: no_permissions.php');
+    return;
+}
+
 header('Location: index.php');
 ?>

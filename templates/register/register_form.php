@@ -1,3 +1,4 @@
+<script src="scripts/registerValidator.js"></script>
 <section id="registerForm">
 	<form action="action_register.php" method="post">
 		<label for="name">Name</label>

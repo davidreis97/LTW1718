@@ -13,6 +13,7 @@
           class="ongoing"
       <?php endif; ?>>
           <?php include('todoItem.php'); ?>
+          <?php include('editTodoItem.php'); ?>
         </li>
       <?php } ?>
   </ul>

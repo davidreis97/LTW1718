@@ -7,6 +7,11 @@
         return;
     }
 
+    if(!checkOwnership($todoListId)){
+        header('Location: no_permissions.php');
+        return;
+    }
+
     $stmt = $db->prepare("SELECT title
                           FROM TodoLists
                           WHERE ID = ?");

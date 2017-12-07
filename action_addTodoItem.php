@@ -16,6 +16,9 @@ if(empty($todoList)) {
     return;
 }
 
-addTodoItemToList($content,$todoList);
+if (!addTodoItemToList($content,$todoList)){
+    header('Location: no_permissions.php');
+    return;
+}
 header('Location: todoPage.php?list='.$todoList);
 ?>

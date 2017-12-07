@@ -1,1 +1,1 @@
-<script src="/scripts/editItems.js"></script>
+<script src="scripts/editItems.js"></script>
