@@ -49,7 +49,7 @@ function userExists($username) {
 
   $user = $stmt->fetch();
 
-  if(empty($user) || (!empty($_SESSION['username']) && $_SESSION['username'] == $user)){
+  if(empty($user) || (!empty($_SESSION['username']) && $_SESSION['username'] == $username)){
     return false;
   }else{
     return true;

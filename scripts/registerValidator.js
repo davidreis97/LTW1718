@@ -5,7 +5,6 @@ username.addEventListener('keyup', validateUsername, false);
 password.addEventListener('keyup', validatePassword, false);
 confirmPassword.addEventListener('keyup', validateRepeat.bind(confirmPassword, password), false);
 
-
 let register = document.querySelector('#registerForm input[type=submit]');
 register.addEventListener('click', validateRegister, false);
 
@@ -28,9 +27,10 @@ function validateUsername(something) {
 
   if(this.value.length < 3){
       invalidUsername = true;
+  }else{
+      invalidUsername = false;
   }
 }
-
 
 function validatePassword(other){
   if (!/^.*(?=.*[A-Z])(?=.*[0-9]).{7,}$/.test(this.value))
@@ -47,7 +47,7 @@ function validateRepeat(password){
 }
 
 function validateRegister(event){
-  if (invalidPassword || invalidConfirm)
+  if (invalidPassword || invalidConfirm || existingUsername || invalidUsername)
     event.preventDefault();
   if (invalidPassword)
     alert('Password must contain at least 7 chars, including 1 number and 1 capital letter');
