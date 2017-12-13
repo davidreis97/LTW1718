@@ -16,7 +16,7 @@ function validateUsername(other){
   }
 
 function validatePassword(other){
-  if (!/^.*(?=.*[A-Z])(?=.*[0-9]).{7,}$/.test(this.value))
+  if (!/^.*.{1,}$/.test(this.value))
     invalidPassword = true;
   else
     invalidPassword = false;
