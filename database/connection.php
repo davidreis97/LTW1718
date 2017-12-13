@@ -39,6 +39,24 @@ function checkOwnership($todoPageID) {
   }
 }
 
+function userExists($username) {
+  global $db;
+
+  $stmt = $db->prepare(" SELECT *
+                         FROM Users
+                         WHERE username=?");
+  $stmt->execute(array($username));
+
+  $user = $stmt->fetch();
+
+  if(empty($user) || (!empty($_SESSION['username']) && $_SESSION['username'] == $user)){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+
 function createUser($username, $password, $name) {
   global $db;  
 
