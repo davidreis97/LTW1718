@@ -9,7 +9,7 @@ let invalidPassword = true;
 let invalidUsername = true;
 
 function validateUsername(other){
-    if (!/^.*.{0,}$/.test(this.value))
+    if (!/^.*.{1,}$/.test(this.value))
       invalidUsername = true;
     else
       invalidUsername = false;
