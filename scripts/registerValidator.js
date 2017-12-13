@@ -1,38 +1,35 @@
-let username = document.querySelector('.registerForm form input[name=username]');
-username.addEventListener('keyup', validateUsername, false);
-
-let password = document.querySelector('.registerForm form input[name=password]');
-let repeat = document.querySelector('.registerForm form input[name=confirmPassword]');
+let password = document.querySelector('#registerForm input[name=password]');
+let confirmPassword = document.querySelector('#registerForm input[name=confirmPassword]');
 password.addEventListener('keyup', validatePassword, false);
-repeat.addEventListener('keyup', validateRepeat.bind(repeat, password), false);
+confirmPassword.addEventListener('keyup', validateRepeat.bind(confirmPassword, password), false);
 
-let register = document.querySelector('.registerForm form');
-register.addEventListener('submit', validateRegister, false);
 
-function validateUsername() {
-  if (!/^[a-z]{3,}$/.test(this.value))
-    this.classList.add('invalid');
+let register = document.querySelector('#registerForm input[type=submit]');
+register.addEventListener('click', validateRegister, false);
+
+let invalidPassword = true;
+let invalidConfirm = true;
+
+
+function validatePassword(other){
+  if (!/^.*(?=.*[A-Z])(?=.*[0-9]).{7,}$/.test(this.value))
+    invalidPassword = true;
   else
-    this.classList.remove('invalid');
+    invalidPassword = false;
 }
 
-function validatePassword(other) {
-  if (!/^.*(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,}$/.test(this.value))
-    this.classList.add('invalid');
-  else
-    this.classList.remove('invalid');
-}
-
-function validateRepeat(password) {
+function validateRepeat(password){
   if (this.value !== password.value)
-    this.classList.add('invalid');
+    invalidConfirm = true;
   else
-    this.classList.remove('invalid');
+    invalidConfirm = false;
 }
 
-function validateRegister(event) {
-  let inputs = this.querySelectorAll('input');
-  for (let i = 0; i < inputs.length; i++)
-    if (inputs[i].classList.contains('invalid'))
-     event.preventDefault();
+function validateRegister(event){
+  if (invalidPassword || invalidConfirm)
+    event.preventDefault();
+  if (invalidPassword)
+    alert('Password must contain at least 7 chars, including 1 number and 1 capital letter');
+  if (invalidConfirm)
+    alert('Password and repeat password dont match!')
 }

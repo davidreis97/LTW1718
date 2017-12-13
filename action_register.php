@@ -1,17 +1,17 @@
 <?php
   include_once('includes/init.php');
-  
+
   $username = trim(strip_tags($_POST['username']));
-  $password = $_POST['password']; 
-  $name = $_POST['name']; 
+  $password = $_POST['password'];
+  $name = $_POST['name'];
 
   if(empty($username)) {
     echo 'NO USERNAME';
     //header('Location: todoPage.php?list='.$todoList);
     return;
   }
-  
-  if(empty($password)) {
+
+  if(!preg_match("/^.*(?=.*[A-Z])(?=.*[0-9]).{7,}$/", $password)) {
     echo 'NO PASSWORD';
     //header('Location: index.php');
     return;
@@ -24,6 +24,6 @@
   }
 
   createUser($username, $password, $name);
-  
-  header('Location: index.php');  
+
+  header('Location: index.php');
 ?>
