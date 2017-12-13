@@ -1,17 +1,17 @@
 <?php
 include_once('includes/init.php');
 
-$content = $_POST['content'];
+$content = trim(strip_tags($_POST['content']));
 $todoList = $_POST['todoList'];
 
 if(empty($content)) {
     echo 'NO CONTENT';
     //header('Location: todoPage.php?list='.$todoList);
-    return; 
+    return;
 }
 
 if(empty($todoList)) {
-    echo 'NO TODOLIST';    
+    echo 'NO TODOLIST';
     //header('Location: index.php');
     return;
 }

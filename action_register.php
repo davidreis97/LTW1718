@@ -3,7 +3,7 @@
 
   $username = trim(strip_tags($_POST['username']));
   $password = $_POST['password'];
-  $name = $_POST['name'];
+  $name = trim(strip_tags($_POST['name']));
 
   if(empty($username)) {
     echo 'NO USERNAME';

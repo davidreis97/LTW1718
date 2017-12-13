@@ -1,13 +1,14 @@
+<script src="scripts/registerValidator.js" defer></script>
 <section id="registerForm">
 	<form action="action_editUser.php" method="post">
 		<label for="name">Name</label>
 		<input type="text" placeholder="name" name="name" id="name" value="<?=$user['name']?>">
-		<label for="username">Username</label>			
+		<label for="username">Username</label>
 		<input type="text" placeholder="username" name="username" id="username" value="<?=$user['username']?>">
-		<label for="password">Password</label>						
+		<label for="password">Password</label>
 		<input type="password" placeholder="password" name="password" id="password">
-		<label for="confirmPassword">Confirm Password</label>									
-		<input type="password" placeholder="confirm password" name="confirmPassword" id="confirmPassword">			
+		<label for="confirmPassword">Confirm Password</label>
+		<input type="password" placeholder="confirm password" name="confirmPassword" id="confirmPassword">
 	    <input type="submit" value="Confirm Changes">
 	</form>
 </section>
